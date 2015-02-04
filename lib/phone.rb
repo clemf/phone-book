@@ -1,5 +1,5 @@
 class Phone
-  attr_reader :number
+  attr_reader :home, :cell
 
   def initialize args
     args.each do |key, value|
