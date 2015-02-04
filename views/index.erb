@@ -1,14 +1,25 @@
 <h1>Contacts:</h1>
 
-<ul>
+<div class="list-group">
 
   <% @contacts.each do |contact| %>
 
-    <li><%= contact.name %>sgdf</li>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading"><%= contact.name %></h4>
+
+        <% unless contact.phone.nil? %>
+          <p class="list-group-item-text">Home phone: <%= contact.phone.home %></p>
+        <% end %>
+
+        <% unless contact.phone.nil? %>
+          <p class="list-group-item-text">Cell phone: <%= contact.phone.cell %></p>
+        <% end %>
+
+    </a>
 
   <% end %>
 
-</ul>
+</div>
 
 <form action="/add_contact" method="post">
   <div class="form-group">
