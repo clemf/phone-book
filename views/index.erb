@@ -4,8 +4,16 @@
 
   <% @contacts.each do |contact| %>
 
-    <li><%= contact.name %></li>
+    <li><%= contact.name %>sgdf</li>
 
   <% end %>
 
 </ul>
+
+<form action="/add_contact" method="post">
+  <div class="form-group">
+    <label for="name" class="sr-only">Enter contact name:</label>
+    <input id="name" name="name" type="text" placeholder="Name" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-default">Add Contact</button>
+</form>
