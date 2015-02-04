@@ -10,6 +10,9 @@ end
 
 post '/add_contact' do
   name = params.fetch("name")
-  Contact.new(name: name).save
+  home = params.fetch("home")
+  cell = params.fetch("cell")
+  phone = Phone.new(home: home, cell: cell)
+  Contact.new(name: name, phone: phone).save
   redirect '/'
 end
