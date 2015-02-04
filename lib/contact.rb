@@ -2,8 +2,9 @@ class Contact
   attr_reader :name, :phone
 
   def initialize args
-    args.each do |k,v|
-      instance_variable_set("@#{k}", v) unless v.nil?
+    args.each do |key, value|
+      binding.pry
+      instance_variable_set("@#{key}", value) unless value.nil?
     end
   end
 end
